@@ -1,7 +1,7 @@
 # OL7SLIM-caddyserver
-https://caddyserver.com
-
 This is a dockerfile for Caddy Server. Everything is loaded into /var/www/html directory. The Caddyfile is put into /etc/caddy/Caddyfile By default, content present inside /var/www/html will be served over web on the port 2015. Ports 80, 443, 8080 and 8443 are also exposed. Mount your content here with appropriate permissions.
+
+detailed information on Caddyserver can be found at https://caddyserver.com
 
 ## plugins
 Caddy server plugins installed by default. List of installed plugins is available in ‘plugin_list’ file in same directory. For reference :
