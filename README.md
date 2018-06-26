@@ -8,10 +8,10 @@ By default, content present inside /var/www/html will be served over web on the 
 Caddy server plugins installed by default:
 List of installed plugins is available in ‘plugin_list’ file in same directory. For reference :
 
-http.login
+### http.login
 github.com/casbin/caddy-authz
 
-http.cgi
+### http.cgi
 github.com/jung-kurt/caddy-cgi
 
 http.cors
