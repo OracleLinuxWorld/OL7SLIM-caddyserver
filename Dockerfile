@@ -4,8 +4,7 @@ LABEL maintainer="Johan Louwers <louwersj@gmail.com>"
 RUN mkdir -p /etc/caddy &&\ 
 useradd -u 1001 -g 0 caddy 
 
-RUN curl https://caddyserver.com/download/linux/amd64?plugins=http.authz,http.cors&license=personal&telemetry=off /usr/bin/caddy
-
+RUN curl -so /usr/bin/caddy 'https://caddyserver.com/download/linux/amd64?plugins=http.authz,http.cors&license=personal&telemetry=off'
 RUN curl https://github.com/OracleLinuxWorld/OL7SLIM-caddyserver/raw/master/Caddyfile /etc/caddy/Caddyfile
 RUN chmod 0755 /usr/bin/caddy
 RUN mkdir -p /var/www/html
