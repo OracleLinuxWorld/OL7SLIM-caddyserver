@@ -2,10 +2,12 @@ FROM oraclelinux:7-slim
 LABEL maintainer="Johan Louwers <louwersj@gmail.com>"
 
 RUN mkdir -p /etc/caddy &&\ 
-useradd -u 1001 -g 0 caddy 
-RUN yum -y install tar
-RUN curl -so /tmp/caddy 'https://caddyserver.com/download/linux/amd64?plugins=http.authz,http.cors&license=personal&telemetry=off'
-RUN tar -xzf /tmp/caddy
+useradd -u 1001 -g 0 caddy &&\
+yum -y install tar
+
+RUN curl -so /tmp/caddy 'https://caddyserver.com/download/linux/amd64?plugins=http.authz,http.cors&license=personal&telemetry=off' &&\
+tar -xzf /tmp/caddy
+
 RUN mv /tmp/caddy /usr/bin/caddy
 RUN curl https://github.com/OracleLinuxWorld/OL7SLIM-caddyserver/raw/master/Caddyfile /etc/caddy/Caddyfile
 RUN chmod 0755 /usr/bin/caddy
