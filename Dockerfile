@@ -3,7 +3,8 @@ LABEL maintainer="Johan Louwers <louwersj@gmail.com>"
 
 RUN mkdir -p /etc/caddy &&\ 
 useradd -u 1001 -g 0 caddy &&\
-yum -y install tar
+yum -y install tar &&\
+yum -y install gzip
 
 RUN curl -so /tmp/caddy 'https://caddyserver.com/download/linux/amd64?plugins=http.authz,http.cors&license=personal&telemetry=off' &&\
 tar -xzf /tmp/caddy
