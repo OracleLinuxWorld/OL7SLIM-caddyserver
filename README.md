@@ -9,46 +9,16 @@ Caddy server plugins installed by default. List of installed plugins is availabl
 #### http.login
 github.com/casbin/caddy-authz
 
-#### http.cgi
-github.com/jung-kurt/caddy-cgi
-
 #### http.cors
 github.com/captncraig/cors
-
-#### http.git
-github.com/abiosoft/caddy-git
-
-#### http.datadog
-github.com/payintech/caddy-datadog
-
-#### http.cache
-github.com/nicolasazrak/caddy-cache
-
-#### http.locale
-github.com/simia-tech/caddy-locale
-
-#### http.filter
-github.com/echocat/caddy-filter
-
-#### http.ratelimit
-github.com/xuqingfeng/caddy-rate-limit
-
-#### http.upload
-blitznote.com/src/caddy.upload
-
-#### http.awses
-github.com/miquella/caddy-awses
-
-#### http.prometheus
-github.com/miekg/caddy-prometheus
 
 ## Caddy Server Configuration
 A default caddyserver config file is loaded into container. To overwrite default caddy file in a built container, you can mount your own at /etc/caddy/Caddyfile, however you are responsible for setting appropriate permissions.
 
-Some of the plugins are installed, but not configured by default as they may have application specific settings.
+Some of the plugins are installed, but not configured by default as they may have application specific settings. You can read more about how to create your own Caddyfile at the caddyfile Syntax documentation.
 
-You can read more about how to create your own Caddyfile at the caddyfile Syntax documentation.
+# Code deployment
+All the code you do want to deploy within the Caddy Server needs to be deployed in /var/www which is the root directory for Caddy. All code deployed here will be served by Caddy. 
 
-Note : For docker volume mounts using -v, you might encounter issues with selinux permission denies. Please take nesessary steps to avoid any issues
-
+# Note
 Note : the base for this image is taken from registry.centos.org 
